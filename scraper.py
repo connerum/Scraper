@@ -12,6 +12,7 @@ driver = webdriver.Chrome('chromedriver.exe')
 def main():
     print('Please log into LinkedIn after the browser opens!')
     input('Press enter to open browser.....')
+    print('\n\n\n')
     openBrowser()
     search()
     preScrape()
@@ -21,11 +22,13 @@ def main():
 def openBrowser():
     driver.get('https://www.linkedin.com/')
     input('After Logging in, press enter to continue!')
+    print('\n\n\n')
 
 
 def search():
     driver.get('https://www.linkedin.com/')
     searchQuery = input('Enter the people you would like to search > ')
+    print('\n\n\n')
     try:
         searchBar = driver.find_element(By.XPATH, '/html/body/div[6]/header/div/div/div/div[1]/input')
         searchBar.click()
@@ -40,6 +43,7 @@ def search():
 def preScrape():
     print('Before scraping begins, please go to the second page!')
     input('Press enter to continue...')
+    print('\n\n\n')
 
 def scrape():
     df = pd.DataFrame({'Name': [''], 'Link': [''], 'Title': [''], 'Location': ['']})
